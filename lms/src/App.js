@@ -2,6 +2,7 @@
 import './App.css';
 import Footer from './components/Footer'
 import Home from './components/Home';
+import Notfound from './pages/Notfound';
 import {
 
   BrowserRouter,
@@ -16,6 +17,7 @@ function App() {
                  <Routes>
                          <Route exact path='/' element={<Home/>}/>
                          <Route exact path='/about' element={<Aboutus/>}/>
+                         <Route exact path='*' element={<Notfound/>}/>
                  </Routes>
       </BrowserRouter>
       
