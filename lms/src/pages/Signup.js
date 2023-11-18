@@ -53,9 +53,18 @@ const Signup = () => {
             toast.error("Choose a stroger password");
             return;
         }
-   const response= await dispatch(createAccount(signupDetails))
+
+        const formData=new FormData();
+        formData.append('fullname',signupDetails.fullname)
+        formData.append('email',signupDetails.email)
+        formData.append('password',signupDetails.password)
+        formData.append('avatar',signupDetails.avatar)
+   const response= await dispatch(createAccount(formData))
   console.log(response);
-  
+  if(response?.payload?.data)
+  {
+    navigate("/");
+  }
   setSignupDetails({
     email:'',
     fullname:'',

@@ -3,6 +3,6 @@ const BASE_URL="http://localhost:5000/api"
 
  const axiosInstance=axios.create()
 axiosInstance.defaults.baseURL=BASE_URL;
-axiosInstance.defaults.timeout=3500;
+axiosInstance.defaults.timeout=35000;
 
  export default axiosInstance;
