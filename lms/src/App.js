@@ -14,6 +14,7 @@ import Aboutus from './pages/Aboutus';
 import SignIn from './pages/SignIn';
 import Contactus from './pages/Contactus';
 import Denied from './pages/Denied';
+import CourseList from './pages/courses/CourseList';
  
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
                          <Route exact path='/signup' element={<Signup/>}/>
                          <Route exact path='/login' element={<SignIn/>}/>
                          <Route exact path='/contact' element={<Contactus/>}/>
+                         <Route exact path='/courses' element={<CourseList/>}/>
                          <Route exact path='/denied' element={<Denied/>}/>
                          
 

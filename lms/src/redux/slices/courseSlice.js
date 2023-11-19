@@ -7,17 +7,15 @@ const initialState={
 
  
    
-export const getAllCourses=createAsyncThunk('/course/getAllCourses',async(data)=>{
+export const getAllCourses=createAsyncThunk('/course/getAllCourses',async()=>{
   try{
-       const response=  axiosInstance.get('/courses/logout',data)
+       const response= axiosInstance.get('/courses/')
        toast.promise(response,{
         loading:"Loading Personalised Courses for You",
-         success:(data)=>{
-            return data?.data?.message
-         },
+         success:"Courses Fetched Succesfully",
          error:"Sorry ! Failed to load the courses Please try again.."
        })
-       return await response;
+       return (await response).data.courses;
   } 
   catch(error){
     toast.error(error?.response?.data?.message);
@@ -27,9 +25,19 @@ export const getAllCourses=createAsyncThunk('/course/getAllCourses',async(data)=
 
 
 const courseSlice=createSlice({
-    name:"auth",
+    name:"course",
     initialState,
     reducers:{},
+    extraReducers:(builder)=>{
+                   builder.addCase(getAllCourses.fulfilled,(state,action)=>{
+                    if(action?.payload)
+                    {
+                      state.courseList=[...action.payload];
+                      
+                    }
+                    console.log(state.courseList)
+                   })
+    }
     
 });
 
