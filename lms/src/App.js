@@ -1,6 +1,6 @@
  
 import './App.css';
-import Footer from './components/Footer'
+ 
 import Home from './components/Home';
 import Notfound from './pages/Notfound';
 import Signup from './pages/Signup';
@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import Aboutus from './pages/Aboutus';
 import SignIn from './pages/SignIn';
+import Contactus from './pages/Contactus';
  
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
                          <Route exact path='/about' element={<Aboutus/>}/>
                          <Route exact path='/signup' element={<Signup/>}/>
                          <Route exact path='/login' element={<SignIn/>}/>
+                         <Route exact path='/contact' element={<Contactus/>}/>
                          <Route exact path='*' element={<Notfound/>}/>
                  </Routes>
       </BrowserRouter>
