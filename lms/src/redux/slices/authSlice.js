@@ -24,12 +24,40 @@ export const createAccount=createAsyncThunk('/auth/signup',async(data)=>{
      console.log(error)
   }
 })
+export const login=createAsyncThunk('/auth/login',async(data)=>{
+  try{
+       const response=  axiosInstance.post('/user/login',data)
+       toast.promise(response,{
+        loading:"Please hang on ! We are finding your account",
+         success:(data)=>{
+            return data?.data?.message
+         },
+         error:"Sorry ! Login Failed Please try again.."
+       })
+       return await response;
+  } 
+  catch(error){
+    toast.error(error?.response?.data?.message);
+     console.log(error)
+  }
+})
 
 
 const authSlice=createSlice({
     name:"auth",
     initialState,
-    reducers:{}
+    reducers:{},
+    extraReducers:(builder)=>{
+      builder.addCase(login.fulfilled,(state,action)=>{
+        
+        localStorage.setItem("data",JSON.stringify(action?.payload?.data))
+        localStorage.setItem("isLoggedIn",true)
+        localStorage.setItem("role",action?.payload?.data?.user?.role)
+        state.isLoggedIn=true;
+        state.role=action?.payload?.data?.user?.role
+        state.data=action?.payload?.data?.user
+      })
+    }
 });
 
 export default authSlice.reducer;

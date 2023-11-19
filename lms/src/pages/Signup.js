@@ -32,8 +32,12 @@ const Signup = () => {
 
    {
         e.preventDefault();
-        
-        if(!signupDetails.email || !signupDetails.fullname || !signupDetails.password || !signupDetails.avatar)
+        if(!signupDetails.avatar)
+        {
+          toast.error("Please upload profile photo")
+          return;
+        }
+        if(!signupDetails.email || !signupDetails.fullname || !signupDetails.password)
         {
             toast.error("Please fill all details")
             return;
@@ -63,7 +67,8 @@ const Signup = () => {
   console.log(response);
   if(response?.payload?.data)
   {
-    navigate("/");
+    toast.success("Login to Continue")
+    navigate("/login");
   }
   setSignupDetails({
     email:'',
