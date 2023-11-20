@@ -12,8 +12,8 @@ const CourseDescription = () => {
   return (
     <HomeLayout>
           <div className='min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white'>
-           <div className='grid grid-cols-2 gap-10 py-10 relative'>
-                <div className='space-y-5 border px-10 py-5 border-yellow-500 rounded-md'>
+           <div className='grid grid-rows-2 gap-10 py-10 relative sm:grid-cols-2 px-5'>
+                <div className='space-y-5  px-10 py-5'>
                     <img
                         src={state?.thumbnail?.secure_url}
                         alt="thumbnail"

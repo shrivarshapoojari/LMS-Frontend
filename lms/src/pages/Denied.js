@@ -14,7 +14,7 @@ const Denied = () => {
 </div>
           <button 
                 className='m-5 ' 
-                onClick={()=>navigate(-1)}>
+                onClick={()=>navigate('/')}>
              
            <span className='relative block px-8 py-3 border border-current bg-orange-400 text-white'> Go Back</span>  
     
