@@ -11,8 +11,8 @@ const CourseDescription = () => {
 
   return (
     <HomeLayout>
-      <div className='flex items-center justify-center '>
-          <div className='min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white'>
+      <div className='flex items-center justify-center w-3/4'>
+          <div className='min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white '>
            <div className='grid grid-rows-2 gap-10 py-10 relative md:grid-cols-2 px-5 '>
                 <div className='space-y-5 px-10 py-5  '>
                     <img
@@ -47,16 +47,19 @@ const CourseDescription = () => {
                         </div>
                 </div>
                  {/* Right Side of grid*/}
-                 <div className='space-y-2 text-xl w-full'>
+                  < div className='space-y-2 text-xl'>
                   <h1 className='text-3xl font-bold text-purple-500 text-center mb-5'>
                     {state?.title}
                   </h1>
+                
                   <p className='text-purple-400 text-center'>
                     Course Overview: {" "}
                   </p>
-                  <p className='text-center'>
+                  <div className='w-full'> 
+                  <p className='text-center whitespace-pre-wrap break-words'>
                     {state?.description}
                   </p>
+                  </div>
                  </div>
            </div>
           </div>
