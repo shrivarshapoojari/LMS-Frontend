@@ -11,8 +11,8 @@ const CourseDescription = () => {
 
   return (
     <HomeLayout>
-          <div className='min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white'>
-           <div className='grid grid-rows-2 gap-10 py-10 relative sm:grid-cols-2 px-5'>
+          <div className='min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white w-3/4'>
+           <div className='grid grid-rows-2 gap-10 py-10 relative md:grid-cols-2 px-5'>
                 <div className='space-y-5  px-10 py-5'>
                     <img
                         src={state?.thumbnail?.secure_url}
@@ -50,10 +50,10 @@ const CourseDescription = () => {
                   <h1 className='text-3xl font-bold text-yellow-500 text-center mb-5'>
                     {state?.title}
                   </h1>
-                  <p className='text-yellow-400 inline'>
+                  <p className='text-yellow-400 text-center'>
                     Course Overview: {" "}
                   </p>
-                  <p className='inline'>
+                  <p className='text-center'>
                     {state?.description}
                   </p>
                  </div>
