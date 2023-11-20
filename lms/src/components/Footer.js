@@ -12,16 +12,16 @@
         </section>
         <section className='flex items-center justify-center gap-5 text-2xl text-white'> 
          <a href="#">
-            <BsFacebook className='hover:text-yellow-600 transiion-all ease-in-out duration-300'/>
+            <BsFacebook className='hover:text-purple-500 transiion-all ease-in-out duration-300'/>
          </a>
          <a href="#">
-            <BsInstagram className='hover:text-yellow-600 transiion-all ease-in-out duration-300'/>
+            <BsInstagram className='hover:text-purple-500 transiion-all ease-in-out duration-300'/>
          </a>
          <a href="#">
-            <BsLinkedin className='hover:text-yellow-600 transiion-all ease-in-out duration-300'/>
+            <BsLinkedin className='hover:text-purple-500 transiion-all ease-in-out duration-300'/>
          </a>
          <a href="#">
-            <BsTwitter className='hover:text-yellow-600 transiion-all ease-in-out duration-300'/>
+            <BsTwitter className='hover:text-purple-500 transiion-all ease-in-out duration-300'/>
          </a>
         </section>
      </footer>

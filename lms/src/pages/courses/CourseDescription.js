@@ -11,9 +11,10 @@ const CourseDescription = () => {
 
   return (
     <HomeLayout>
-          <div className='min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white w-3/4'>
-           <div className='grid grid-rows-2 gap-10 py-10 relative md:grid-cols-2 px-5'>
-                <div className='space-y-5  px-10 py-5'>
+      <div className='flex items-center justify-center '>
+          <div className='min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white'>
+           <div className='grid grid-rows-2 gap-10 py-10 relative md:grid-cols-2 px-5 '>
+                <div className='space-y-5 px-10 py-5  '>
                     <img
                         src={state?.thumbnail?.secure_url}
                         alt="thumbnail"
@@ -21,15 +22,15 @@ const CourseDescription = () => {
                         <div className='space-y-4'>
                             <div className='flex flex-col ibtems-center justify-between text-xl'>
                                 <p className='font-semibold'>
-                                    <span className='font-bold text-yellow-500'> Total Duration:{ " "} </span>{state?.numberOfLectures}
+                                    <span className='font-bold text-purple-500'> Total Duration:{ " "} </span>{state?.numberOfLectures}
                                 </p>
                                 <p className='font-semibold'>
-                                    <span className='font-bold text-yellow-500'> Mentor:{ " "} </span>{state?.createdBy}
+                                    <span className='font-bold text-purple-500'> Mentor:{ " "} </span>{state?.createdBy}
                                 </p>
                             </div>
                             {(role=='ADMIN' || data?.subscription?.status=='active') ?
                                ( <button 
-                                        className='text-yellow-500 text-xl rounded-md border border-current bg-transparent px-5 py-2 w-full hover:bg-yellow-500 hover:text-white hover:font-bold'
+                                        className='text-purple-500 text-xl rounded-md border border-current bg-transparent px-5 py-2 w-full hover:bg-purple-500 hover:text-white hover:font-bold'
                                         onClick={()=>navigate('/course/displaylectures',{state:{...data}})}
                                         
                                         >
@@ -37,7 +38,7 @@ const CourseDescription = () => {
                                             Start Learning
                                         </button>):(
                                <button 
-                                    className='text-yellow-500 text-xl rounded-md border border-current bg-transparent px-5 py-2 w-full hover:bg-yellow-500 hover:text-white hover:font-bold'
+                                    className='text-purple-500 text-xl rounded-md border border-current bg-transparent px-5 py-2 w-full hover:bg-purple-500 hover:text-white hover:font-bold'
                                          onClick={()=>navigate('/checkout')}>
                                      
                                          Subscribe
@@ -46,11 +47,11 @@ const CourseDescription = () => {
                         </div>
                 </div>
                  {/* Right Side of grid*/}
-                 <div className='space-y-2 text-xl'>
-                  <h1 className='text-3xl font-bold text-yellow-500 text-center mb-5'>
+                 <div className='space-y-2 text-xl w-full'>
+                  <h1 className='text-3xl font-bold text-purple-500 text-center mb-5'>
                     {state?.title}
                   </h1>
-                  <p className='text-yellow-400 text-center'>
+                  <p className='text-purple-400 text-center'>
                     Course Overview: {" "}
                   </p>
                   <p className='text-center'>
@@ -58,6 +59,7 @@ const CourseDescription = () => {
                   </p>
                  </div>
            </div>
+          </div>
           </div>
     </HomeLayout>
   )

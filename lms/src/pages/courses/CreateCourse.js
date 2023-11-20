@@ -77,7 +77,7 @@ async function onFormSubmit(e)
          <div className="flex justify-center items-center h-[90vh] my-10 sm:my-0 ">
                 <form
                     onSubmit={onFormSubmit}
-                    className="flex flex-col justify-center gap-5 rounded-lg px-4 text-white w-3/4 sm:w-[700px] shadow-[0_0_100px_black] relative"
+                    className="flex flex-col justify-center gap-5 rounded-lg px-4 text-white w-3/4 sm:w-[700px] shadow-[0_0_100px_purple] relative"
                 >
                     
                     <Link  className="absolute top-3 text-2xl link text-accent cursor-pointer">
@@ -183,7 +183,7 @@ async function onFormSubmit(e)
                     </main>
                     <button
                     type='submit'
-                    className='w-full py-3 rounded-sm font-semibold text-lg cursor-pointer bg-transparent hover:bg-yellow-500 text-white hover:font-bold border mb-5'
+                    className='w-full py-3 rounded-sm font-semibold text-lg cursor-pointer bg-transparent hover:bg-purple-500 text-white hover:font-bold border mb-5'
                     
                     >
                         Create Course

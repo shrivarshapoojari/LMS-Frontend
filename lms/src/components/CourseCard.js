@@ -12,7 +12,7 @@ const CourseCard = ({data}) => {
             className='h-48 w-full rounded-tl-lg rounded-tr-lg group hover:scale=[1,2] transition-all ease-in-out duration-300' />
          </div>
          <div className='p-3 space-y-1 text-white'>
-            <h2 className='text-xl font-bold text-yellow-500 line-clamp-2'>
+            <h2 className='text-xl font-bold text-purple-500 line-clamp-2'>
                 {data?.title}
             </h2>
             <p className='line-clamp-2'>{data?.description} </p>
