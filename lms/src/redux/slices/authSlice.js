@@ -4,7 +4,7 @@ import axiosInstance  from "../../config/axiosInstance"
 const initialState={
     isLoggedIn:localStorage.getItem("isLoggedIn") || false,
     role:localStorage.getItem("role") || "",
-    data:JSON.parse(localStorage.getItem("data")) || {}
+    data: localStorage.getItem('data') != undefined ? JSON.parse(localStorage.getItem('data')) : {}
 }
 
 export const createAccount=createAsyncThunk('/auth/signup',async(data)=>{
@@ -36,6 +36,23 @@ export const updateProfile=createAsyncThunk('/auth/update/profile',async(data)=>
         loading:"Please hang on ! We are updating your account",
          success: "Profile update succesfully",
          error:"Sorry ! Can't update your profile .. Try again"
+       })
+       return (await response).data;
+  } 
+  catch(error){
+    toast.error(error?.response?.data?.message);
+     console.log(error)
+  }
+
+})
+export const changePassword=createAsyncThunk('/auth/changePassword',async(data)=>{
+  try{
+       
+       const response= axiosInstance.post(`/user/change/${data[0]}`,data[1])
+       toast.promise(response,{
+        loading:"Please hang on ! We are updating your password",
+         success: "Password updated succesfully",
+         error:"Sorry ! Can't update your password .. Try again"
        })
        return (await response).data;
   } 

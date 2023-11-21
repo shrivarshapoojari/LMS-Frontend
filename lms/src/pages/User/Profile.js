@@ -34,7 +34,7 @@ const Profile = () => {
                   </div>
                   
                   <div className='flex items-center justify-between gap-2'>
-                     <Link to='user/changepassword' className='w-1/2 bg-purple-600 hover:bg-purple-500 text-center px-2 py-2 rounded-sm font-semibold cursor-pointer'>
+                     <Link to='/user/changepassword' className='w-1/2 bg-purple-600 hover:bg-purple-500 text-center px-2 py-2 rounded-sm font-semibold cursor-pointer'>
                         Change Password
                      </Link>
                      <Link to='/user/editprofile' className='w-1/2 bg-purple-600 hover:bg-purple-500 text-center px-2 py-2 rounded-sm font-semibold cursor-pointer'>
