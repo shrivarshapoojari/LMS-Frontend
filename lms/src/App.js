@@ -21,6 +21,8 @@ import RequireAuth from './components/Auth/RequireAuth';
  import Profile from './pages/User/Profile';
 import EditProfile from './pages/User/EditProfile';
 import Changepassword from './pages/User/Changepassword';
+import ForgotPassword from './pages/User/ForgotPassword';
+import ResetForgotPass from './pages/User/ResetForgotPass'
 function App() {
   return (
     <>
@@ -30,6 +32,8 @@ function App() {
                          <Route exact path='/about' element={<Aboutus/>}/>
                          <Route exact path='/signup' element={<Signup/>}/>
                          <Route exact path='/login' element={<SignIn/>}/>
+                         <Route exact path='/forgot' element={<ForgotPassword/>}/>
+                         <Route exact path='/api/user/reset/:resetToken'element={<ResetForgotPass/>}/>
                          <Route exact path='/contact' element={<Contactus/>}/>
                          <Route exact path='/courses' element={<CourseList/>}/>
                          <Route exact path='/course/description' element={<CourseDescription/>}/>
@@ -40,6 +44,7 @@ function App() {
                               <Route exact path='/user/profile' element={<Profile/>}/>
                               <Route exact path='/user/editprofile' element={<EditProfile/>}/>
                               <Route exact path='/user/changepassword' element={<Changepassword/>}/>
+                              
                             </Route>
 
                          <Route exact path='/denied' element={<Denied/>}/>

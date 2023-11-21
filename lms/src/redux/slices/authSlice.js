@@ -4,7 +4,8 @@ import axiosInstance  from "../../config/axiosInstance"
 const initialState={
     isLoggedIn:localStorage.getItem("isLoggedIn") || false,
     role:localStorage.getItem("role") || "",
-    data: localStorage.getItem('data') != undefined ? JSON.parse(localStorage.getItem('data')) : {}
+    data: localStorage.getItem('data') !== undefined ? JSON.parse(localStorage.getItem('data')) : {},
+    resetId:localStorage.getItem('rese')||''
 }
 
 export const createAccount=createAsyncThunk('/auth/signup',async(data)=>{
@@ -53,6 +54,42 @@ export const changePassword=createAsyncThunk('/auth/changePassword',async(data)=
         loading:"Please hang on ! We are updating your password",
          success: "Password updated succesfully",
          error:"Sorry ! Can't update your password .. Try again"
+       })
+       return (await response).data;
+  } 
+  catch(error){
+    toast.error(error?.response?.data?.message);
+     console.log(error)
+  }
+
+})
+export const forgotPassword=createAsyncThunk('/auth/forgot',async(data)=>{
+  try{
+    
+       
+       const response= axiosInstance.post('/user/reset',data)
+       toast.promise(response,{
+        loading:"Sending recovery mail",
+         success: "Password Recovery mail sent!",
+         error:"Failed to send password recovery mail"
+       })
+       return (await response);
+  } 
+  catch(error){
+    toast.error(error?.response?.data?.message);
+     console.log(error)
+  }
+
+})
+export const resetForgotPassword=createAsyncThunk('/auth/resetForgotPassword',async(data)=>{
+  try{
+     alert(data[0])
+       
+       const response= axiosInstance.post(`/user/reset/${data[0]}`,data[1])
+       toast.promise(response,{
+        loading:"We are Updating your password",
+         success: "Succesfully updated your password",
+         error:"Failed to update password"
        })
        return (await response).data;
   } 
@@ -120,13 +157,14 @@ const authSlice=createSlice({
     extraReducers:(builder)=>{
       builder
       .addCase(login.fulfilled,(state,action)=>{
-        
+        console.log(action.payload)
         localStorage.setItem("data",JSON.stringify(action?.payload?.data))
         localStorage.setItem("isLoggedIn",true)
         localStorage.setItem("role",action?.payload?.data?.user?.role)
         state.isLoggedIn=true;
         state.role=action?.payload?.data?.user?.role
         state.data=action?.payload?.user
+
       })
       .addCase(logout.fulfilled,(state)=>{
          localStorage.clear();
@@ -142,6 +180,11 @@ const authSlice=createSlice({
         state.isLoggedIn=true;
         state.role=action?.payload?.user?.role
         state.data=action?.payload?.user
+      })
+      .addCase(forgotPassword.fulfilled,(state,action)=>{
+     
+      localStorage.setItem('rese',action?.payload?.data?.user?.forgotPasswordToken)  
+       state.resetId=action?.payload?.data?.user?.forgotPasswordToken
       })
 
       

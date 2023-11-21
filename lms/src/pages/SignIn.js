@@ -125,9 +125,14 @@ const SignIn = () => {
                     <button className='mt-2  bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 cursor-pointer py-2 font-semibold text-lg '>
                             Sign In
                     </button>
-                    <p className='text-center'>
-                      New User ? <Link to='/signup' className='cursor-pointer text-accent'>SignUp</Link>
+                    <div className='flex gap-3'>
+                    <p className='inline'>
+                      New User ? <Link to='/signup' className='cursor-pointer text-accent '>SignUp</Link>
                     </p>
+                    <p className='inline'>
+                       <Link to='/forgot' className='cursor-pointer text-accent '>ForgotPassword?</Link>
+                    </p>
+                    </div>
        </form>
       </div>
 
