@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import HomeLayout from '../../layouts/HomeLayout'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { getUserData } from '../../redux/slices/authSlice'
 const Profile = () => {
     const dispatch=useDispatch();
-    const userData=useSelector((state)=>state?.auth?.data?.user)
+    const userData=useSelector((state)=>state?.auth?.data)
+        
+    async function loadUser(){
+      await dispatch(getUserData())
+    }
+   
+    useEffect(()=>{
+
+      loadUser();
+    },[])
     
   return (
      <HomeLayout>
@@ -24,7 +34,7 @@ const Profile = () => {
                   </div>
                   
                   <div className='flex items-center justify-between gap-2'>
-                     <Link to='/changepassword' className='w-1/2 bg-purple-600 hover:bg-purple-500 text-center px-2 py-2 rounded-sm font-semibold cursor-pointer'>
+                     <Link to='user/changepassword' className='w-1/2 bg-purple-600 hover:bg-purple-500 text-center px-2 py-2 rounded-sm font-semibold cursor-pointer'>
                         Change Password
                      </Link>
                      <Link to='/user/editprofile' className='w-1/2 bg-purple-600 hover:bg-purple-500 text-center px-2 py-2 rounded-sm font-semibold cursor-pointer'>

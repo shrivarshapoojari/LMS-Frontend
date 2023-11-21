@@ -24,6 +24,42 @@ export const createAccount=createAsyncThunk('/auth/signup',async(data)=>{
      console.log(error)
   }
 })
+
+
+
+
+export const updateProfile=createAsyncThunk('/auth/update/profile',async(data)=>{
+  try{
+       
+       const response= axiosInstance.put(`/user/update/${data[0]}`,data[1])
+       toast.promise(response,{
+        loading:"Please hang on ! We are updating your account",
+         success: "Profile update succesfully",
+         error:"Sorry ! Can't update your profile .. Try again"
+       })
+       return (await response).data;
+  } 
+  catch(error){
+    toast.error(error?.response?.data?.message);
+     console.log(error)
+  }
+
+})
+
+
+
+
+export const getUserData=createAsyncThunk('/auth/getdetails',async()=>{
+  try{
+       const response=  axiosInstance.get('/user/me')
+      
+       return (await response).data;
+  } 
+  catch(error){
+    toast.error(error?.message);
+     console.log(error)
+  }
+})
 export const login=createAsyncThunk('/auth/login',async(data)=>{
   try{
        const response=  axiosInstance.post('/user/login',data)
@@ -73,13 +109,22 @@ const authSlice=createSlice({
         localStorage.setItem("role",action?.payload?.data?.user?.role)
         state.isLoggedIn=true;
         state.role=action?.payload?.data?.user?.role
-        state.data=action?.payload?.data?.user
+        state.data=action?.payload?.user
       })
       .addCase(logout.fulfilled,(state)=>{
          localStorage.clear();
          state.isLoggedIn=false;
         state.role="";
         state.data= {};
+      })
+      .addCase(getUserData.fulfilled,(state,action)=>{
+        
+        localStorage.setItem("data",JSON.stringify(action?.payload?.user))
+        localStorage.setItem("isLoggedIn",true)
+        localStorage.setItem("role",action?.payload?.user?.role)
+        state.isLoggedIn=true;
+        state.role=action?.payload?.user?.role
+        state.data=action?.payload?.user
       })
 
       
