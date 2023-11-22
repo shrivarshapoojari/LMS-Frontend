@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { AiFillCheckCircle } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
- 
-
+ import { useDispatch } from 'react-redux'
+import {getUserData} from '../../redux/slices/authSlice'
 const PaymentSuccess = () => {
+const dispatch=useDispatch()
+  useEffect(()=>{
+    dispatch(getUserData())
+  })
   return (
     <div className='min-h-[90vh] flex items-center justify-center text-white'>
         <div className='w-80 h-[26rem] flex flex-col justify-center items-center shadow-[0_0_100px_purple] rounded-lg relative ' >
