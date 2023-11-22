@@ -1,5 +1,6 @@
 import React from 'react'
-import HomeLayout from '../../layouts/HomeLayout'
+ 
+import Second from '../../layouts/Second'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 const CourseDescription = () => {
@@ -10,7 +11,7 @@ const CourseDescription = () => {
     const {role , data }=useSelector((state)=>state.auth)
 
   return (
-    <HomeLayout>
+    <Second>
       <div className='flex items-center justify-center w-3/4'>
           <div className='min-h-[90vh] pt-12 px-20 flex flex-col items-center justify-center text-white '>
            <div className='grid grid-rows-2 gap-10 py-10 relative md:grid-cols-2 px-5 '>
@@ -65,7 +66,7 @@ const CourseDescription = () => {
            </div>
           </div>
           </div>
-    </HomeLayout>
+    </Second>
   )
 }
 

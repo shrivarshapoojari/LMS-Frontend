@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import HomeLayout from '../layouts/HomeLayout'
+import Second from '../layouts/Second'
 import toast from 'react-hot-toast';
  import { isEmail } from '../helper/regexmatcher';
 import axiosInstance from '../config/axiosInstance';
@@ -59,7 +59,7 @@ const Contactus = () => {
     }
   return (
     <>
-      <HomeLayout>
+      <Second>
         <div className='flex items-center justify-center h-[100vh] '>
            <form onSubmit={onFormSubmit} noValidate className='flex flex-col items-center justify-center gap-2 p-5 rounded-md text-white shadow-[0_0_100px_purple] w-1/3'>
                <h1 className='text-3xl font-semibold'>Contact Form</h1>
@@ -114,7 +114,7 @@ const Contactus = () => {
        
          </form>
          </div>
-      </HomeLayout>
+      </Second>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import HomeLayout from '../layouts/HomeLayout'
+import Second from '../layouts/Second'
 import aboutMainimg from '../Assets/Images/aboutMainImage.png'
 import steve from '../Assets/Images/steveJobs.png'
 import apj from '../Assets/Images/apj.png'
@@ -8,7 +8,7 @@ import gates from '../Assets/Images/billGates.png'
 import newton from '../Assets/Images/einstein.png'
 const Aboutus = () => {
   return (
-    <HomeLayout>
+    <Second>
        <div className='flex flex-col text-white pl-20 pt-20'>
            <div className='flex items-center gap-5 mx-10'>
                 <section className='w-1/2 space-y-10 '>
@@ -80,7 +80,7 @@ const Aboutus = () => {
         </div>
        </div>
 
-    </HomeLayout>
+    </Second>
   )
 }
 

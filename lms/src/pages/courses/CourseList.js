@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import HomeLayout from '../../layouts/HomeLayout'
+ 
+import Second from '../../layouts/Second'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllCourses } from '../../redux/slices/courseSlice'
 import CourseCard from '../../components/CourseCard'
@@ -23,7 +24,7 @@ const CourseList = () => {
 
  
   return (
-     <HomeLayout>
+     <Second>
         <div className='min-h-[90vh] pt-12 pl-20 flex flex-col gap-10 text-white'>
                 <h1 className='text-center text-4xl font-semibold mb-5'> 
                     Explore courses made by {" "}
@@ -37,7 +38,7 @@ const CourseList = () => {
          </div>
         </div>
         
-     </HomeLayout>
+     </Second>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import HomeLayout from '../../layouts/HomeLayout'
+import Second from '../../layouts/Second'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { getUserData } from '../../redux/slices/authSlice'
@@ -30,7 +30,7 @@ const Profile = () => {
     }
     
   return (
-     <HomeLayout>
+     <Second>
         <div className='min-h-[90vh] flex items-center justify-center' >
             <div className='my-10 flex flex-col gap-4 rounded-lg p-4 text-white w-96 shadow-[0_0_100px_purple]'>
                <img src={userData?.avatar?.secure_url} alt="User" 
@@ -63,7 +63,7 @@ const Profile = () => {
             </div>
           
         </div>
-     </HomeLayout>
+     </Second>
   )
 }
 

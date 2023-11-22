@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import HomeLayout from '../layouts/HomeLayout';
+import Second from '../layouts/Second';
 import { BsPersonCircle } from 'react-icons/bs';
 import { isEmail,isValidPassword } from '../helper/regexmatcher';
 import { Link } from 'react-router-dom';
@@ -115,7 +115,7 @@ setPreviewImage('');
      })
    }
   return (
-   <HomeLayout>
+   <Second>
       <div className='flex overflow-x-auto items-center justify-center h-[100vh]'>
        <form onSubmit={onFormSubmit} noValidate  className='flex flex-col justify-center gap-3 rounded-lg p-4 text-white'> 
 
@@ -205,7 +205,7 @@ setPreviewImage('');
       </div>
 
 
-   </HomeLayout>   
+   </Second>   
   )
 }
 

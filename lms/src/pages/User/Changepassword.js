@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import HomeLayout from '../../layouts/HomeLayout'
+ import Second from '../../layouts/Second'
 import { Link, useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
  
@@ -46,7 +46,7 @@ const dispatch=useDispatch();
 
     }
   return (
-    <HomeLayout>
+    <Second>
          <div className='flex overflow-x-auto items-center justify-center h-[90vh]'>
        <form onSubmit={onFormSubmit} className='flex flex-col justify-center gap-3 rounded-lg p-4 text-white shadow-[0_0_200px_purple]'> 
 
@@ -95,7 +95,7 @@ const dispatch=useDispatch();
        </form>
       </div>
 
-    </HomeLayout>
+    </Second>
   )
 }
 

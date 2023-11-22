@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import HomeLayout from '../../layouts/HomeLayout'
+ import Second from '../../layouts/Second'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { getRazorPayId, purchaseCourseBundle, verifyUserPayment } from '../../redux/slices/RazorpaySlice'
@@ -65,7 +65,7 @@ const Checkout = () => {
     }
    
   return (
-    <HomeLayout>
+    <Second>
 
     <form
         onSubmit={handleSubscription}
@@ -99,7 +99,7 @@ const Checkout = () => {
                  </div>
              </div>
      </form>
-    </HomeLayout>
+    </Second>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import HomeLayout from '../../layouts/HomeLayout'
+ import Second from '../../layouts/Second'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
@@ -72,7 +72,7 @@ async function onFormSubmit(e)
 
   return (
     <div >
-    <HomeLayout>
+    <Second>
        
          <div className="flex justify-center items-center h-[90vh] my-10 sm:my-0 ">
                 <form
@@ -190,7 +190,7 @@ async function onFormSubmit(e)
                     </button>
                 </form>
                 </div>
-    </HomeLayout>
+    </Second>
     </div>
   )
 }

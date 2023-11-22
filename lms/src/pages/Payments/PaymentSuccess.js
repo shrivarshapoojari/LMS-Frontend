@@ -3,14 +3,14 @@ import { AiFillCheckCircle } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
  import { useDispatch } from 'react-redux'
 import {getUserData} from '../../redux/slices/authSlice'
-import HomeLayout from '../../layouts/HomeLayout'
+import Second from '../../layouts/Second'
 const PaymentSuccess = () => {
 const dispatch=useDispatch()
   useEffect(()=>{
     dispatch(getUserData())
   })
   return (
-    <HomeLayout>
+    <Second>
     <div className='min-h-[90vh] flex items-center justify-center text-white'>
         <div className='w-80 h-[26rem] flex flex-col justify-center items-center shadow-[0_0_100px_purple] rounded-lg relative ' >
                 <h1 className='bg-green-500 absolute text-center top-0 w-full py-4 text-2xl font-bold rounded-t-lg' >Payment Successfull</h1>
@@ -29,7 +29,7 @@ const dispatch=useDispatch()
 
 
     </div>
-    </HomeLayout>
+    </Second>
   )
 }
 

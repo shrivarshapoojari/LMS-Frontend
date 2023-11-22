@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import HomeLayout from '../../layouts/HomeLayout'
+import Second from '../../layouts/Second'
 import toast from 'react-hot-toast'
 import { isValidPassword } from '../../helper/regexmatcher'
 import { useDispatch} from 'react-redux'
@@ -52,7 +52,7 @@ const ResetForgotPass = () => {
     }
   return (
     
-    <HomeLayout>
+    <Second>
          <div className='flex overflow-x-auto items-center justify-center h-[90vh]'>
   <form onSubmit={onFormSubmit} noValidate className='flex flex-col justify-center gap-3 rounded-lg p-4 text-white shadow-[0_0_200px_purple] w-[350px]'> 
 
@@ -84,7 +84,7 @@ const ResetForgotPass = () => {
               
   </form>
  </div>
-    </HomeLayout>
+    </Second>
   )
 }
 
