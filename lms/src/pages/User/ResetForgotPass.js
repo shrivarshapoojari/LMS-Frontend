@@ -5,12 +5,14 @@ import { isValidPassword } from '../../helper/regexmatcher'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import  {resetForgotPassword} from '../../redux/slices/authSlice'
+import { useParams } from 'react-router-dom'
 const ResetForgotPass = () => {
   const[userInput,setUserInput]=useState({
-    password:''
-  })
-  const resetId=useSelector((state)=>state?.auth?.resetId)
+    password:'',
   
+  })
+
+  const { resetToken } = useParams();
   const dispatch=useDispatch();
   const navigate=useNavigate();
 
@@ -27,9 +29,8 @@ const ResetForgotPass = () => {
           {
             toast.error("Enter a Stronger Password")
             return;
-          }
-          alert(resetId)
-          await dispatch(resetForgotPassword([resetId,userInput]))
+          } 
+          await dispatch(resetForgotPassword([resetToken,userInput]))
 
 
 

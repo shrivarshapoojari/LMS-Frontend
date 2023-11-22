@@ -5,7 +5,7 @@ const initialState={
     isLoggedIn:localStorage.getItem("isLoggedIn") || false,
     role:localStorage.getItem("role") || "",
     data: localStorage.getItem('data') !== undefined ? JSON.parse(localStorage.getItem('data')) : {},
-    resetId:localStorage.getItem('rese')||''
+    
 }
 
 export const createAccount=createAsyncThunk('/auth/signup',async(data)=>{
@@ -83,7 +83,7 @@ export const forgotPassword=createAsyncThunk('/auth/forgot',async(data)=>{
 })
 export const resetForgotPassword=createAsyncThunk('/auth/resetForgotPassword',async(data)=>{
   try{
-     alert(data[0])
+ 
        
        const response= axiosInstance.post(`/user/reset/${data[0]}`,data[1])
        toast.promise(response,{
@@ -181,12 +181,7 @@ const authSlice=createSlice({
         state.role=action?.payload?.user?.role
         state.data=action?.payload?.user
       })
-      .addCase(forgotPassword.fulfilled,(state,action)=>{
-     
-      localStorage.setItem('rese',action?.payload?.data?.user?.forgotPasswordToken)  
-       state.resetId=action?.payload?.data?.user?.forgotPasswordToken
-      })
-
+       
       
     }
 });
