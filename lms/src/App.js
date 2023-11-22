@@ -26,12 +26,15 @@ import ResetForgotPass from './pages/User/ResetForgotPass'
 import Checkout from './pages/Payments/Checkout';
 import PaymentSuccess from './pages/Payments/PaymentSuccess';
 import PaymentFailed from './pages/Payments/PaymentFailed';
+import Second from './layouts/Second';
 function App() {
   return (
     <>
       <BrowserRouter>
                  <Routes>
+                        
                          <Route exact path='/' element={<Home/>}/>
+                         <Route exact path='/second' element={<Second/>}/>
                          <Route exact path='/about' element={<Aboutus/>}/>
                          <Route exact path='/signup' element={<Signup/>}/>
                          <Route exact path='/login' element={<SignIn/>}/>

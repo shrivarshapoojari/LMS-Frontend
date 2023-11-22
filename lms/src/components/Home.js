@@ -30,6 +30,7 @@ const Home = () => {
        <img src={HomePageMainImage} alt="image" />
         </div>
       </div>
+      
     </HomeLayout>
   );
 };
