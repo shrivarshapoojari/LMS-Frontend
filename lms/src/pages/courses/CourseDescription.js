@@ -59,6 +59,7 @@ const CourseDescription = () => {
                   <p className='text-center whitespace-pre-wrap break-words'>
                     {state?.description}
                   </p>
+                  
                   </div>
                  </div>
            </div>

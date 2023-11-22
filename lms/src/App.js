@@ -23,6 +23,8 @@ import EditProfile from './pages/User/EditProfile';
 import Changepassword from './pages/User/Changepassword';
 import ForgotPassword from './pages/User/ForgotPassword';
 import ResetForgotPass from './pages/User/ResetForgotPass'
+import Checkout from './pages/Payments/Checkout';
+import PaymentSuccess from './pages/Payments/PaymentSuccess';
 function App() {
   return (
     <>
@@ -44,6 +46,8 @@ function App() {
                               <Route exact path='/user/profile' element={<Profile/>}/>
                               <Route exact path='/user/editprofile' element={<EditProfile/>}/>
                               <Route exact path='/user/changepassword' element={<Changepassword/>}/>
+                              <Route exact path='/checkout' element={<Checkout/>}/>
+                              <Route exact path='/checkout/success' element={<PaymentSuccess/>}/>
                               
                             </Route>
 
