@@ -61,7 +61,7 @@ const Contactus = () => {
     <>
       <Second>
         <div className='flex items-center justify-center h-[100vh] '>
-           <form onSubmit={onFormSubmit} noValidate className='flex flex-col items-center justify-center gap-2 p-5 rounded-md text-white shadow-[0_0_100px_purple] w-1/3'>
+           <form onSubmit={onFormSubmit} noValidate className='flex flex-col items-center justify-center gap-2 p-5 rounded-md text-white shadow-[0_0_100px_purple] md:w-1/3 w-[90%]'>
                <h1 className='text-3xl font-semibold'>Contact Form</h1>
                  <div className='flex flex-col w-full gap-1'>
                     <label htmlFor="name" className='text-xl font-semibold'>
