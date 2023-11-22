@@ -25,6 +25,7 @@ import ForgotPassword from './pages/User/ForgotPassword';
 import ResetForgotPass from './pages/User/ResetForgotPass'
 import Checkout from './pages/Payments/Checkout';
 import PaymentSuccess from './pages/Payments/PaymentSuccess';
+import PaymentFailed from './pages/Payments/PaymentFailed';
 function App() {
   return (
     <>
@@ -48,6 +49,7 @@ function App() {
                               <Route exact path='/user/changepassword' element={<Changepassword/>}/>
                               <Route exact path='/checkout' element={<Checkout/>}/>
                               <Route exact path='/checkout/success' element={<PaymentSuccess/>}/>
+                              <Route exact path='/checkout/failed' element={<PaymentFailed/>}/>
                               
                             </Route>
 
