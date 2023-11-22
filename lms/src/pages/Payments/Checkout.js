@@ -54,6 +54,7 @@ const Checkout = () => {
             paymentDetails.razorpay_signature=response.razorpay_signature
             toast.success("Payment Sucess")
             const res=await dispatch(verifyUserPayment(paymentDetails))
+            console.log(res);
             res?.payload?.success ?navigate('/checkout/success'):navigate('/checkout/fail')
         }
 
