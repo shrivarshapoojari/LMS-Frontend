@@ -38,13 +38,14 @@ const Second = ({children}) => {
     <div className='min-h-[90vh]'>
     <div className="navbar bg-base-100">
   <div className="flex-1">
-    <a className="btn btn-ghost text-xl">MERN LEARN</a>
+    
+    <Link className='btn btn-ghost text-xl text-purple-500 font-semibold border border-purple-500 hover:font-bold hover:border-purple-600 ' to='/'>MERN LEARN</Link>
   </div>
   <div className="flex-none">
     <div className="dropdown dropdown-end">
       <label tabIndex={0} className="btn btn-ghost btn-circle">
         <div className="indicator">
-          <BsBook className='w-10 h-8 mr-1'/>
+          <BsBook className='w-10 h-8 mr-1 text-purple-500'/>
         </div>
       </label>
       <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow-[0_0_100px_purple]">
@@ -52,7 +53,7 @@ const Second = ({children}) => {
           <span className="font-bold text-lg">View Courses</span>
           <span className="text-info">at  ₹ 499</span>
           <div className="card-actions">
-            <button className="btn btn-primary btn-block" onClick={handlebutton}>View Courses</button>
+            <button className="btn btn-primary btn-block " onClick={handlebutton}>View Courses</button>
           </div>
         </div>
       </div>
@@ -61,7 +62,7 @@ const Second = ({children}) => {
       <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
         <div className=" rounded-full w-10">
             {
-                userimg?(<img src={userimg}/>):<BsPersonCircle className='h-[100%] w-[100%] object-cover'/>
+                userimg?(<img src={userimg}/>):<BsPersonCircle className='h-[100%] w-[100%] object-cover text-purple-500'/>
             }
           
         </div>

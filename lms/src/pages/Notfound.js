@@ -10,7 +10,7 @@ const Notfound = () => {
             Page not found ..
           </div>
           <button className='mt-5 '>
-              <Link to='/' className='relative inline-block text-sm font-medium text-[#FF6A3D] active:text-yellow-500'>
+              <Link to='/' className='relative inline-block text-sm font-medium text-[#FF6A3D] active:text-purple-500'>
                 <span className='relative block px-8 py-3 bg-[#1A2238] border border-current'>Go Back</span>
               </Link>
           </button>

@@ -195,7 +195,7 @@ setPreviewImage('');
                               
                         />
             </div>
-                    <button className='mt-2  bg-yellow-500 hover:bg-yellow-600 transition-all ease-in-out duration-300 cursor-pointer py-2 font-semibold text-lg '>
+                    <button className='mt-2  bg-purple-500 hover:bg-purple-600 transition-all ease-in-out duration-300 cursor-pointer py-2 font-semibold text-lg '>
                             Create Account
                     </button>
                     <p className='text-center'>
