@@ -40,7 +40,7 @@ const Profile = () => {
               {userData?.fullname}
             </h3>
                   <div className='grid grid-cols-2'>
-                      <p>Email: </p> <p>{userData?.email}</p>
+                      <p>Email: </p> <p className='ml-[-50%]'>{userData?.email}</p>
                       <p>Role: </p> <p> {userData?.role}</p>
                       <p>Subscription: </p> <p> {userData?.subscription?.status==="active"?"Active":"Expired"}</p>
                        
