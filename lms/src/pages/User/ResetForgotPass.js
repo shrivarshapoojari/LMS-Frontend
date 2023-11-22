@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import HomeLayout from '../../layouts/HomeLayout'
 import toast from 'react-hot-toast'
 import { isValidPassword } from '../../helper/regexmatcher'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch} from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import  {resetForgotPassword} from '../../redux/slices/authSlice'
 import { useParams } from 'react-router-dom'
@@ -31,8 +31,9 @@ const ResetForgotPass = () => {
             return;
           } 
           await dispatch(resetForgotPassword([resetToken,userInput]))
-
-
+          
+         navigate('/login')
+         toast.success("Login using new password")
 
   }
       
