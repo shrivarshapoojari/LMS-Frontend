@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import { logout } from '../redux/slices/authSlice';
 import { useNavigate } from 'react-router-dom';
 import { BsBook } from "react-icons/bs";
-import Footer from '../components/Footer';
+import NewFooter from '../components/NewFooter';
 
 const Second = ({children}) => {
     
@@ -99,7 +99,7 @@ const Second = ({children}) => {
   </div>
 </div>
 {children}
-        <Footer/>
+        <NewFooter/>
 </div>
   )
 }
