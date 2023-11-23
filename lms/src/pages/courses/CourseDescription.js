@@ -9,6 +9,7 @@ const CourseDescription = () => {
     const navigate=useNavigate();
 
     const {role , data }=useSelector((state)=>state.auth)
+    
 
   return (
     <Second>
@@ -32,7 +33,7 @@ const CourseDescription = () => {
                             {(role=='ADMIN' || data?.subscription?.status=='active') ?
                                ( <button 
                                         className='text-purple-500 text-xl rounded-md border border-current bg-transparent px-5 py-2 w-full hover:bg-purple-500 hover:text-white hover:font-bold'
-                                        onClick={()=>navigate('/course/displaylectures',{state:{...data}})}
+                                        onClick={()=>navigate('/course/displayLectures',{state:{...state}})}
                                         
                                         >
                                             

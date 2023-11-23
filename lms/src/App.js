@@ -27,6 +27,7 @@ import Checkout from './pages/Payments/Checkout';
 import PaymentSuccess from './pages/Payments/PaymentSuccess';
 import PaymentFailed from './pages/Payments/PaymentFailed';
 import Second from './layouts/Second';
+import Display from './pages/Dashboard/Display';
 function App() {
   return (
     <>
@@ -53,6 +54,7 @@ function App() {
                               <Route exact path='/checkout' element={<Checkout/>}/>
                               <Route exact path='/checkout/success' element={<PaymentSuccess/>}/>
                               <Route exact path='/checkout/failed' element={<PaymentFailed/>}/>
+                              <Route exact path='/course/displayLectures' element={<Display/>}/>
                               
                             </Route>
 
