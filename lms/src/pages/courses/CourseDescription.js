@@ -36,8 +36,10 @@ const CourseDescription = () => {
                                         onClick={()=>navigate('/course/displayLectures',{state:{...state}})}
                                         
                                         >
+                                          { role=='ADMIN' && "Manage Course"}
+                                          { role=='USER' && "Start Learning"}
                                             
-                                            Start Learning
+                                          
                                         </button>):(
                                <button 
                                     className='text-purple-500 text-xl rounded-md border border-current bg-transparent px-5 py-2 w-full hover:bg-purple-500 hover:text-white hover:font-bold'

@@ -28,6 +28,7 @@ import PaymentSuccess from './pages/Payments/PaymentSuccess';
 import PaymentFailed from './pages/Payments/PaymentFailed';
 import Second from './layouts/Second';
 import Display from './pages/Dashboard/Display';
+import Addlecture from './pages/Dashboard/AddLecture';
 function App() {
   return (
     <>
@@ -46,6 +47,7 @@ function App() {
                          <Route exact path='/course/description' element={<CourseDescription/>}/>
                             <Route element={<RequireAuth allowedRoles={["ADMIN"]}/>}>
                               <Route exact path='/courses/create' element={<CreateCourse/>}/>
+                              <Route exact path='/course/addlecture' element={<Addlecture/>}/>
                             </Route>
                             <Route element={<RequireAuth allowedRoles={["ADMIN","USER"]}/>}>
                               <Route exact path='/user/profile' element={<Profile/>}/>

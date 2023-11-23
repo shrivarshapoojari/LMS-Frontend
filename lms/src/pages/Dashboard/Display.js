@@ -29,7 +29,7 @@ useEffect(()=>{
     }
      
   
-    
+console.log(state)  
     dispatch(getCourseLecture(state._id))
 },[])
 
@@ -64,11 +64,12 @@ useEffect(()=>{
                       </div>
                       <ul className='space-y-5 md:w-[28rem] p-2 rounded-lg md:shadow-[0_0_10px_black] md:mx-5 w-full'>
                             <li className='font-semibold text-xl text-purple-500 flex items-center justify-between'>
+                            
                               Lecutures List 
                               {
                                 role=='ADMIN' &&
                                 (
-                                  <button className='btn btn-ghost' onClick={()=>navigate("/course/addlecture")}>Add Lecture</button>
+                                  <button className='btn btn-ghost'  onClick={()=>navigate('/course/addlecture',{state:{...state}})}>Add Lecture</button>
                                 )
                               }
                             </li>
